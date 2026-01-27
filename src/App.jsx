@@ -2,6 +2,8 @@ import "./App.css";
 import Counter from "./components/Counter/Counter";
 import { galleryData } from "./components/Gallery/data";
 import Gallery from "./components/Gallery/Gallery";
+import TogglePara from "./components/TogglePara/TogglePara";
+import UpdatEmail from "./components/UpdateEmail/UpdatEmail";
 
 function App() {
   let name = "salman";
@@ -16,10 +18,11 @@ function App() {
     </div> */}
 
       <div className="d-flex">
-        {galleryData.map((item) => {
-          return <Gallery {...item}/>;
-        })}
+        {galleryData.map( item => <Gallery {...item} key={item.id}/> )}
       </div>
+      
+      <TogglePara />
+      <UpdatEmail />
     </div>
   );
 }
