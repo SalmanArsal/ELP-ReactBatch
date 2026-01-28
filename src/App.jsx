@@ -2,6 +2,8 @@ import "./App.css";
 import Counter from "./components/Counter/Counter";
 import { galleryData } from "./components/Gallery/data";
 import Gallery from "./components/Gallery/Gallery";
+import TodoItem from "./components/Todolist/TodoItem";
+import TodoList from "./components/Todolist/TodoList";
 import TogglePara from "./components/TogglePara/TogglePara";
 import UpdatEmail from "./components/UpdateEmail/UpdatEmail";
 
@@ -23,6 +25,7 @@ function App() {
       
       <TogglePara />
       <UpdatEmail />
+      <TodoList />
     </div>
   );
 }
