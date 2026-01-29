@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .card{
   background-color: black;
   color: white;
@@ -7,4 +9,8 @@
   display: flex;
   justify-content: center;
   gap: 2rem;
+}
+
+.todolist{
+  @apply bg-red-100 min-h-150 text-center pt-20 text-3xl
 }
