@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoItem from "./TodoItem";
 
 const TodoList = () => {
   let [todo, setTodo] = useState("");
-  let [todos, setTodos] = useState([]);
+  let [todos, setTodos] = useState(() =>{
+      return JSON.parse(localStorage.getItem("todos")) || []
+  });
   let [isEdit, setIsEdit] = useState(false);
   let [editIndex, setEditIndex] = useState(null);
+
+  useEffect(() =>{
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }, [todos])
 
   let handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +25,7 @@ const TodoList = () => {
       setIsEdit(false);
       setEditIndex(null);
     } else {
-      setTodos((prev) => [...prev, todo]);
+        setTodos((prev) => [...prev, todo]);
     }
     setTodo(""); // to make input value empty after adding a todo
   };
